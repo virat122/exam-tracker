@@ -1,0 +1,46 @@
+<div class="login-container">
+    <button class="theme-toggle login-theme" type="button" (click)="theme.toggle()" [attr.aria-label]="theme.isDark ? 'Use light mode' : 'Use dark mode'">{{ theme.isDark ? '☀' : '☾' }}</button>
+
+    <div class="login-card">
+        <div class="brand-mark">✦</div>
+        <p class="eyebrow">YOUR PREP COMPANION</p>
+        <h1>Exam<span>Track</span></h1>
+        <p class="subtitle">Make every mock test count. Sign in to see your preparation clearly.</p>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Select Student</mat-label>
+
+            <mat-select [(ngModel)]="selectedStudent">
+
+                @for (student of students; track student.id) {
+                <mat-option [value]="student.id">
+                    {{ student.name }}
+                </mat-option>
+                }
+
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>4-Digit PIN</mat-label>
+
+            <input matInput type="password" maxlength="4" inputmode="numeric" [(ngModel)]="pin" />
+
+        </mat-form-field>
+
+
+        @if (errorMessage) {
+        <div class="error-message">
+            {{ errorMessage }}
+        </div>
+        }
+
+        <button mat-raised-button color="primary" class="login-button" (click)="login()"
+            [disabled]="!selectedStudent || pin.length !== 4">
+            Continue to dashboard →
+        </button>
+
+    </div>
+
+</div>

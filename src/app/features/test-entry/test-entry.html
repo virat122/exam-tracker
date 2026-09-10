@@ -1,0 +1,639 @@
+<main class="entry-page">
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <p class="eyebrow">NEW PERFORMANCE LOG</p>
+
+      <h1>Add a test result</h1>
+
+      <p>
+        Hi {{ studentName }}, capture the essentials while they’re fresh.
+      </p>
+    </div>
+
+    <div class="actions">
+
+      <button
+        class="theme-toggle"
+        type="button"
+        (click)="theme.toggle()">
+        {{ theme.isDark ? '☀' : '☾' }}
+      </button>
+
+      <button
+        mat-stroked-button
+        type="button"
+        (click)="back()">
+        ← Dashboard
+      </button>
+
+    </div>
+  </header>
+
+
+  <section class="entry-layout">
+
+    <!-- ========================= -->
+    <!-- MAIN FORM -->
+    <!-- ========================= -->
+
+    <div class="entry-card">
+
+      <!-- TEST DETAILS -->
+
+      <div class="card-heading">
+
+        <span>01</span>
+
+        <div>
+          <h2>Test details</h2>
+
+          <p>Tell us what you practised.</p>
+        </div>
+
+      </div>
+
+
+      <div class="form-grid">
+
+        <!-- DATE -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Date</mat-label>
+
+          <input
+            matInput
+            type="date"
+            [(ngModel)]="testDate">
+
+        </mat-form-field>
+
+
+        <!-- TIER -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Tier</mat-label>
+
+          <mat-select [(ngModel)]="tier">
+
+            <mat-option value="TIER_1">
+              Tier 1
+            </mat-option>
+
+            <mat-option value="TIER_2">
+              Tier 2
+            </mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+
+
+        <!-- TEST TYPE -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Test type</mat-label>
+
+          <mat-select
+            [(ngModel)]="testType"
+            (selectionChange)="onTestTypeChange()">
+
+            <mat-option value="FULL_TEST">
+              Full test
+            </mat-option>
+
+            <mat-option value="SECTIONAL">
+              Sectional
+            </mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+
+
+        <!-- SECTIONAL SUBJECT -->
+
+        @if (testType === 'SECTIONAL') {
+
+          <mat-form-field appearance="outline">
+
+            <mat-label>Subject</mat-label>
+
+            <mat-select
+              [(ngModel)]="subject"
+              (selectionChange)="onSubjectChange()">
+
+              @for (item of subjects; track item) {
+
+                <mat-option [value]="item">
+                  {{ item }}
+                </mat-option>
+
+              }
+
+            </mat-select>
+
+          </mat-form-field>
+
+        }
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- RESULT -->
+      <!-- ========================= -->
+
+      <div class="card-heading result-heading">
+
+        <span>02</span>
+
+        <div>
+
+          <h2>Your result</h2>
+
+          <p>
+            Numbers only — incorrect and skipped are calculated automatically.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-grid">
+
+        <!-- TOTAL QUESTIONS -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Total questions</mat-label>
+
+          <input
+            matInput
+            type="number"
+            min="1"
+            [(ngModel)]="totalQuestions">
+
+        </mat-form-field>
+
+
+        <!-- ATTEMPTED -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Attempted</mat-label>
+
+          <input
+            matInput
+            type="number"
+            min="0"
+            [(ngModel)]="attempted">
+
+        </mat-form-field>
+
+
+        <!-- CORRECT -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Correct</mat-label>
+
+          <input
+            matInput
+            type="number"
+            min="0"
+            [(ngModel)]="correct">
+
+        </mat-form-field>
+
+
+        <!-- TIME -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Time taken (minutes)</mat-label>
+
+          <input
+            matInput
+            type="number"
+            min="1"
+            [(ngModel)]="timeTakenMinutes">
+
+        </mat-form-field>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- SUBJECT MARKS -->
+      <!-- ========================= -->
+
+      <div class="card-heading result-heading">
+
+        <span>03</span>
+
+        <div>
+
+          <h2>Subject-wise marks</h2>
+
+          <p>
+            Enter marks obtained for each subject.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="subject-marks-list">
+
+        @for (item of subjectMarks; track item.subject) {
+
+          <div class="subject-mark-card">
+
+            <div class="subject-mark-title">
+
+              <strong>
+                {{ item.subject }}
+              </strong>
+
+            </div>
+
+
+            <!-- MARKS OBTAINED -->
+
+            <mat-form-field appearance="outline">
+
+              <mat-label>Marks obtained</mat-label>
+
+              <input
+                matInput
+                type="number"
+                min="0"
+                [max]="item.totalMarks"
+                [(ngModel)]="item.marksObtained">
+
+            </mat-form-field>
+
+
+            <!-- TOTAL MARKS -->
+
+            <mat-form-field appearance="outline">
+
+              <mat-label>Total marks</mat-label>
+
+              <input
+                matInput
+                type="number"
+                min="1"
+                [(ngModel)]="item.totalMarks">
+
+            </mat-form-field>
+
+          </div>
+
+        }
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- WRONG QUESTIONS -->
+      <!-- ========================= -->
+
+      <div class="card-heading result-heading">
+
+        <span>04</span>
+
+        <div>
+
+          <h2>Wrong questions</h2>
+
+          <p>
+            Add questions you got wrong and track why you made the mistake.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ADD WRONG QUESTION FORM -->
+
+      <div class="wrong-question-form">
+
+
+        <!-- SUBJECT -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Subject</mat-label>
+
+          <mat-select
+            [(ngModel)]="wrongSubject">
+
+            @for (item of subjects; track item) {
+
+              <mat-option [value]="item">
+                {{ item }}
+              </mat-option>
+
+            }
+
+          </mat-select>
+
+        </mat-form-field>
+
+
+        <!-- CHAPTER -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Chapter</mat-label>
+
+          <mat-select
+            [(ngModel)]="wrongChapter">
+
+            @for (
+              chapter of getChaptersForSubject();
+              track chapter
+            ) {
+
+              <mat-option [value]="chapter">
+                {{ chapter }}
+              </mat-option>
+
+            }
+
+          </mat-select>
+
+        </mat-form-field>
+
+
+        <!-- MISTAKE TYPE -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Mistake type</mat-label>
+
+          <mat-select
+            [(ngModel)]="wrongReason">
+
+            @for (reason of reasons; track reason) {
+
+              <mat-option [value]="reason">
+                {{ reason }}
+              </mat-option>
+
+            }
+
+          </mat-select>
+
+        </mat-form-field>
+
+
+        <!-- NOTES -->
+
+        <mat-form-field
+          appearance="outline"
+          class="notes-field">
+
+          <mat-label>Notes (optional)</mat-label>
+
+          <input
+            matInput
+            [(ngModel)]="wrongNotes"
+            placeholder="e.g. Forgot formula">
+
+        </mat-form-field>
+
+
+        <!-- ADD BUTTON -->
+
+        <button
+          mat-stroked-button
+          type="button"
+          class="add-question-button"
+          (click)="addWrongQuestion()">
+
+          + Add Wrong Question
+
+        </button>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- WRONG QUESTION LIST -->
+      <!-- ========================= -->
+
+      @if (wrongQuestions.length > 0) {
+
+        <div class="wrong-question-list">
+
+          <h3>
+            Added wrong questions ({{ wrongQuestions.length }})
+          </h3>
+
+
+          @for (
+            question of wrongQuestions;
+            track $index;
+            let i = $index
+          ) {
+
+            <div class="wrong-question-item">
+
+              <div class="wrong-question-info">
+
+                <strong>
+                  {{ question.subject }} — {{ question.chapter }}
+                </strong>
+
+                <span>
+                  {{ question.reason }}
+                </span>
+
+                @if (question.notes) {
+
+                  <small>
+                    {{ question.notes }}
+                  </small>
+
+                }
+
+              </div>
+
+
+              <button
+                mat-button
+                color="warn"
+                type="button"
+                (click)="removeWrongQuestion(i)">
+
+                Remove
+
+              </button>
+
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+
+      @if (wrongQuestions.length === 0) {
+
+        <div class="empty-info">
+
+          No wrong questions added yet.
+
+        </div>
+
+      }
+
+
+      <!-- ERROR -->
+
+      @if (error) {
+
+        <p class="form-error">
+          {{ error }}
+        </p>
+
+      }
+
+
+      <!-- SAVE -->
+
+      <button
+        mat-flat-button
+        class="save-button"
+        type="button"
+        (click)="save()">
+
+        Save test result →
+
+      </button>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- LIVE PREVIEW -->
+    <!-- ========================= -->
+
+    <aside class="preview">
+
+      <p class="eyebrow">
+        LIVE PREVIEW
+      </p>
+
+
+      <h2>
+        {{ accuracy }}% accuracy
+      </h2>
+
+
+      <div
+        class="ring"
+        [style.--progress]="accuracy + '%'">
+
+        <span>
+
+          {{ correct }}
+
+          <small>
+            correct
+          </small>
+
+        </span>
+
+      </div>
+
+
+      <div class="preview-stats">
+
+        <div>
+
+          <strong>
+            {{ attempted }}
+          </strong>
+
+          <span>
+            attempted
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            {{ incorrect }}
+          </strong>
+
+          <span>
+            incorrect
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            {{ unattempted }}
+          </strong>
+
+          <span>
+            skipped
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- TOTAL MARKS -->
+
+      <div class="marks-preview">
+
+        <p>
+          Marks
+        </p>
+
+        <strong>
+          {{ totalMarksObtained }} /
+          {{ totalPossibleMarks }}
+        </strong>
+
+      </div>
+
+
+      <!-- WRONG QUESTIONS COUNT -->
+
+      <div class="wrong-count">
+
+        <p>
+          Wrong questions logged
+        </p>
+
+        <strong>
+          {{ wrongQuestions.length }}
+        </strong>
+
+      </div>
+
+    </aside>
+
+  </section>
+
+</main>

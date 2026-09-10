@@ -1,0 +1,1284 @@
+{
+  "tests": [
+  {
+    "id": 1,
+    "studentId": 1,
+    "testDate": "2026-08-01",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 22,
+        "correct": 18,
+        "incorrect": 4,
+        "unattempted": 3,
+        "marksObtained": 36,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 20,
+        "incorrect": 3,
+        "unattempted": 2,
+        "marksObtained": 40,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 18,
+        "incorrect": 3,
+        "unattempted": 4,
+        "marksObtained": 36,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 18,
+        "correct": 12,
+        "incorrect": 6,
+        "unattempted": 7,
+        "marksObtained": 24,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 84,
+    "correct": 68,
+    "incorrect": 16,
+    "unattempted": 16,
+    "marksObtained": 136,
+    "totalMarks": 200,
+    "timeTakenMinutes": 58,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Percentage",
+        "reason": "Concept not clear"
+      },
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Profit and Loss",
+        "reason": "Calculation mistake"
+      },
+      {
+        "subject": "Reasoning",
+        "chapter": "Coding Decoding",
+        "reason": "Silly mistake"
+      },
+      {
+        "subject": "English",
+        "chapter": "Error Detection",
+        "reason": "Concept not clear"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "studentId": 1,
+    "testDate": "2026-08-05",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 22,
+        "incorrect": 3,
+        "unattempted": 0,
+        "marksObtained": 44,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 22,
+        "incorrect": 2,
+        "unattempted": 1,
+        "marksObtained": 44,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 22,
+        "correct": 19,
+        "incorrect": 3,
+        "unattempted": 3,
+        "marksObtained": 38,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 15,
+        "correct": 10,
+        "incorrect": 5,
+        "unattempted": 10,
+        "marksObtained": 20,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 86,
+    "correct": 73,
+    "incorrect": 13,
+    "unattempted": 14,
+    "marksObtained": 146,
+    "totalMarks": 200,
+    "timeTakenMinutes": 59,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Time and Work",
+        "reason": "Calculation mistake"
+      },
+      {
+        "subject": "General Awareness",
+        "chapter": "History",
+        "reason": "Fact forgotten"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "studentId": 2,
+    "testDate": "2026-08-02",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 15,
+        "incorrect": 5,
+        "unattempted": 5,
+        "marksObtained": 30,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 21,
+        "incorrect": 4,
+        "unattempted": 0,
+        "marksObtained": 42,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 20,
+        "incorrect": 4,
+        "unattempted": 1,
+        "marksObtained": 40,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 12,
+        "correct": 8,
+        "incorrect": 4,
+        "unattempted": 13,
+        "marksObtained": 16,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 81,
+    "correct": 64,
+    "incorrect": 17,
+    "unattempted": 19,
+    "marksObtained": 128,
+    "totalMarks": 200,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Geometry",
+        "reason": "Formula forgotten"
+      },
+      {
+        "subject": "English",
+        "chapter": "Vocabulary",
+        "reason": "Unknown word"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "studentId": 3,
+    "testDate": "2026-08-03",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 20,
+        "incorrect": 3,
+        "unattempted": 2,
+        "marksObtained": 40,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 19,
+        "incorrect": 4,
+        "unattempted": 2,
+        "marksObtained": 38,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 22,
+        "incorrect": 3,
+        "unattempted": 0,
+        "marksObtained": 44,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 15,
+        "incorrect": 5,
+        "unattempted": 5,
+        "marksObtained": 30,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 91,
+    "correct": 76,
+    "incorrect": 15,
+    "unattempted": 9,
+    "marksObtained": 152,
+    "totalMarks": 200,
+    "timeTakenMinutes": 57,
+    "wrongQuestions": [
+      {
+        "subject": "General Awareness",
+        "chapter": "Current Affairs",
+        "reason": "Outdated knowledge"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "studentId": 4,
+    "testDate": "2026-08-04",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 18,
+        "correct": 14,
+        "incorrect": 4,
+        "unattempted": 7,
+        "marksObtained": 28,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 17,
+        "incorrect": 3,
+        "unattempted": 5,
+        "marksObtained": 34,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 19,
+        "correct": 15,
+        "incorrect": 4,
+        "unattempted": 6,
+        "marksObtained": 30,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 14,
+        "correct": 9,
+        "incorrect": 5,
+        "unattempted": 11,
+        "marksObtained": 18,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 71,
+    "correct": 55,
+    "incorrect": 16,
+    "unattempted": 29,
+    "marksObtained": 110,
+    "totalMarks": 200,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Mensuration",
+        "reason": "Time management issue"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "studentId": 5,
+    "testDate": "2026-08-05",
+    "tier": "TIER_2",
+    "testType": "SECTIONAL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 30,
+        "attempted": 28,
+        "correct": 25,
+        "incorrect": 3,
+        "unattempted": 2,
+        "marksObtained": 75,
+        "totalMarks": 90
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 30,
+        "attempted": 29,
+        "correct": 27,
+        "incorrect": 2,
+        "unattempted": 1,
+        "marksObtained": 81,
+        "totalMarks": 90
+      }
+    ],
+    "totalQuestions": 60,
+    "attempted": 57,
+    "correct": 52,
+    "incorrect": 5,
+    "unattempted": 3,
+    "marksObtained": 156,
+    "totalMarks": 180,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Algebra",
+        "reason": "Sign mistake"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "studentId": 1,
+    "testDate": "2026-08-08",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 21,
+        "incorrect": 3,
+        "unattempted": 1,
+        "marksObtained": 42,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 23,
+        "incorrect": 2,
+        "unattempted": 0,
+        "marksObtained": 46,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 19,
+        "incorrect": 4,
+        "unattempted": 2,
+        "marksObtained": 38,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 17,
+        "correct": 11,
+        "incorrect": 6,
+        "unattempted": 8,
+        "marksObtained": 22,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 89,
+    "correct": 74,
+    "incorrect": 15,
+    "unattempted": 11,
+    "marksObtained": 148,
+    "totalMarks": 200,
+    "timeTakenMinutes": 55,
+    "wrongQuestions": [
+      {
+        "subject": "Reasoning",
+        "chapter": "Blood Relations",
+        "reason": "Misread question"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "studentId": 2,
+    "testDate": "2026-08-09",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 17,
+        "incorrect": 4,
+        "unattempted": 4,
+        "marksObtained": 34,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 20,
+        "incorrect": 4,
+        "unattempted": 1,
+        "marksObtained": 40,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 16,
+        "incorrect": 4,
+        "unattempted": 5,
+        "marksObtained": 32,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 10,
+        "correct": 6,
+        "incorrect": 4,
+        "unattempted": 15,
+        "marksObtained": 12,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 75,
+    "correct": 59,
+    "incorrect": 16,
+    "unattempted": 25,
+    "marksObtained": 118,
+    "totalMarks": 200,
+    "timeTakenMinutes": 58,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "SI & CI",
+        "reason": "Calculation error"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "studentId": 3,
+    "testDate": "2026-08-10",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 24,
+        "incorrect": 1,
+        "unattempted": 0,
+        "marksObtained": 48,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 25,
+        "incorrect": 0,
+        "unattempted": 0,
+        "marksObtained": 50,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 21,
+        "incorrect": 3,
+        "unattempted": 1,
+        "marksObtained": 42,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 22,
+        "correct": 18,
+        "incorrect": 4,
+        "unattempted": 3,
+        "marksObtained": 36,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 96,
+    "correct": 88,
+    "incorrect": 8,
+    "unattempted": 4,
+    "marksObtained": 176,
+    "totalMarks": 200,
+    "timeTakenMinutes": 56,
+    "wrongQuestions": [
+      {
+        "subject": "English",
+        "chapter": "Reading Comprehension",
+        "reason": "Overthought the answer"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "studentId": 4,
+    "testDate": "2026-08-11",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 15,
+        "correct": 12,
+        "incorrect": 3,
+        "unattempted": 10,
+        "marksObtained": 24,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 18,
+        "correct": 15,
+        "incorrect": 3,
+        "unattempted": 7,
+        "marksObtained": 30,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 14,
+        "incorrect": 6,
+        "unattempted": 5,
+        "marksObtained": 28,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 12,
+        "correct": 7,
+        "incorrect": 5,
+        "unattempted": 13,
+        "marksObtained": 14,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 65,
+    "correct": 48,
+    "incorrect": 17,
+    "unattempted": 35,
+    "marksObtained": 96,
+    "totalMarks": 200,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "English",
+        "chapter": "Cloze Test",
+        "reason": "Lack of vocabulary"
+      },
+      {
+        "subject": "Reasoning",
+        "chapter": "Puzzles",
+        "reason": "Time taken was too long"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "studentId": 5,
+    "testDate": "2026-08-12",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 22,
+        "correct": 19,
+        "incorrect": 3,
+        "unattempted": 3,
+        "marksObtained": 38,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 21,
+        "incorrect": 2,
+        "unattempted": 2,
+        "marksObtained": 42,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 17,
+        "incorrect": 4,
+        "unattempted": 4,
+        "marksObtained": 34,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 16,
+        "correct": 10,
+        "incorrect": 6,
+        "unattempted": 9,
+        "marksObtained": 20,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 82,
+    "correct": 67,
+    "incorrect": 15,
+    "unattempted": 18,
+    "marksObtained": 134,
+    "totalMarks": 200,
+    "timeTakenMinutes": 57,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Number System",
+        "reason": "Conceptual gap"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "studentId": 1,
+    "testDate": "2026-08-14",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 20,
+        "incorrect": 4,
+        "unattempted": 1,
+        "marksObtained": 40,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 22,
+        "incorrect": 2,
+        "unattempted": 1,
+        "marksObtained": 44,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 20,
+        "incorrect": 3,
+        "unattempted": 2,
+        "marksObtained": 40,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 19,
+        "correct": 14,
+        "incorrect": 5,
+        "unattempted": 6,
+        "marksObtained": 28,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 90,
+    "correct": 76,
+    "incorrect": 14,
+    "unattempted": 10,
+    "marksObtained": 152,
+    "totalMarks": 200,
+    "timeTakenMinutes": 58,
+    "wrongQuestions": [
+      {
+        "subject": "General Awareness",
+        "chapter": "Geography",
+        "reason": "Guessed incorrectly"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "studentId": 2,
+    "testDate": "2026-08-15",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 19,
+        "incorrect": 2,
+        "unattempted": 4,
+        "marksObtained": 38,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 22,
+        "correct": 20,
+        "incorrect": 2,
+        "unattempted": 3,
+        "marksObtained": 40,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 15,
+        "incorrect": 5,
+        "unattempted": 5,
+        "marksObtained": 30,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 14,
+        "correct": 9,
+        "incorrect": 5,
+        "unattempted": 11,
+        "marksObtained": 18,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 77,
+    "correct": 63,
+    "incorrect": 14,
+    "unattempted": 23,
+    "marksObtained": 126,
+    "totalMarks": 200,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "English",
+        "chapter": "Active Passive Voice",
+        "reason": "Rule confused"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "studentId": 3,
+    "testDate": "2026-08-16",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 23,
+        "incorrect": 2,
+        "unattempted": 0,
+        "marksObtained": 46,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 23,
+        "incorrect": 1,
+        "unattempted": 1,
+        "marksObtained": 46,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 23,
+        "incorrect": 2,
+        "unattempted": 0,
+        "marksObtained": 46,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 16,
+        "incorrect": 5,
+        "unattempted": 4,
+        "marksObtained": 32,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 95,
+    "correct": 85,
+    "incorrect": 10,
+    "unattempted": 5,
+    "marksObtained": 170,
+    "totalMarks": 200,
+    "timeTakenMinutes": 55,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Trigonometry",
+        "reason": "Value error"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "studentId": 4,
+    "testDate": "2026-08-18",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 17,
+        "correct": 13,
+        "incorrect": 4,
+        "unattempted": 8,
+        "marksObtained": 26,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 19,
+        "correct": 16,
+        "incorrect": 3,
+        "unattempted": 6,
+        "marksObtained": 32,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 15,
+        "incorrect": 6,
+        "unattempted": 4,
+        "marksObtained": 30,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 13,
+        "correct": 8,
+        "incorrect": 5,
+        "unattempted": 12,
+        "marksObtained": 16,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 70,
+    "correct": 52,
+    "incorrect": 18,
+    "unattempted": 30,
+    "marksObtained": 104,
+    "totalMarks": 200,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "English",
+        "chapter": "Para Jumbles",
+        "reason": "Sequencing error"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "studentId": 5,
+    "testDate": "2026-08-19",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 16,
+        "incorrect": 4,
+        "unattempted": 5,
+        "marksObtained": 32,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 21,
+        "incorrect": 3,
+        "unattempted": 1,
+        "marksObtained": 42,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 22,
+        "correct": 18,
+        "incorrect": 4,
+        "unattempted": 3,
+        "marksObtained": 36,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 18,
+        "correct": 12,
+        "incorrect": 6,
+        "unattempted": 7,
+        "marksObtained": 24,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 84,
+    "correct": 67,
+    "incorrect": 17,
+    "unattempted": 16,
+    "marksObtained": 134,
+    "totalMarks": 200,
+    "timeTakenMinutes": 59,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Data Interpretation",
+        "reason": "Calculation error"
+      },
+      {
+        "subject": "General Awareness",
+        "chapter": "Economics",
+        "reason": "Concept not clear"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "studentId": 1,
+    "testDate": "2026-08-20",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 21,
+        "incorrect": 2,
+        "unattempted": 2,
+        "marksObtained": 42,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 25,
+        "correct": 24,
+        "incorrect": 1,
+        "unattempted": 0,
+        "marksObtained": 48,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 24,
+        "correct": 21,
+        "incorrect": 3,
+        "unattempted": 1,
+        "marksObtained": 42,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 16,
+        "correct": 11,
+        "incorrect": 5,
+        "unattempted": 9,
+        "marksObtained": 22,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 88,
+    "correct": 77,
+    "incorrect": 11,
+    "unattempted": 12,
+    "marksObtained": 154,
+    "totalMarks": 200,
+    "timeTakenMinutes": 56,
+    "wrongQuestions": [
+      {
+        "subject": "General Awareness",
+        "chapter": "Polity",
+        "reason": "Article number forgotten"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "studentId": 2,
+    "testDate": "2026-08-21",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 16,
+        "incorrect": 5,
+        "unattempted": 4,
+        "marksObtained": 32,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 23,
+        "correct": 19,
+        "incorrect": 4,
+        "unattempted": 2,
+        "marksObtained": 38,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 22,
+        "correct": 17,
+        "incorrect": 5,
+        "unattempted": 3,
+        "marksObtained": 34,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 15,
+        "correct": 9,
+        "incorrect": 6,
+        "unattempted": 10,
+        "marksObtained": 18,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 81,
+    "correct": 61,
+    "incorrect": 20,
+    "unattempted": 19,
+    "marksObtained": 122,
+    "totalMarks": 200,
+    "timeTakenMinutes": 58,
+    "wrongQuestions": [
+      {
+        "subject": "Reasoning",
+        "chapter": "Syllogism",
+        "reason": "Venn diagram error"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "studentId": 3,
+    "testDate": "2026-08-22",
+    "tier": "TIER_2",
+    "testType": "SECTIONAL_TEST",
+    "subjects": [
+      {
+        "subject": "English Language",
+        "totalQuestions": 45,
+        "attempted": 42,
+        "correct": 38,
+        "incorrect": 4,
+        "unattempted": 3,
+        "marksObtained": 114,
+        "totalMarks": 135
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 15,
+        "incorrect": 5,
+        "unattempted": 5,
+        "marksObtained": 45,
+        "totalMarks": 75
+      }
+    ],
+    "totalQuestions": 70,
+    "attempted": 62,
+    "correct": 53,
+    "incorrect": 9,
+    "unattempted": 8,
+    "marksObtained": 159,
+    "totalMarks": 210,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "English Language",
+        "chapter": "Direct Indirect Speech",
+        "reason": "Rule exception missed"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "studentId": 4,
+    "testDate": "2026-08-23",
+    "tier": "TIER_1",
+    "testType": "FULL_TEST",
+    "subjects": [
+      {
+        "subject": "Quantitative Aptitude",
+        "totalQuestions": 25,
+        "attempted": 19,
+        "correct": 15,
+        "incorrect": 4,
+        "unattempted": 6,
+        "marksObtained": 30,
+        "totalMarks": 50
+      },
+      {
+        "subject": "Reasoning",
+        "totalQuestions": 25,
+        "attempted": 21,
+        "correct": 18,
+        "incorrect": 3,
+        "unattempted": 4,
+        "marksObtained": 36,
+        "totalMarks": 50
+      },
+      {
+        "subject": "English",
+        "totalQuestions": 25,
+        "attempted": 20,
+        "correct": 16,
+        "incorrect": 4,
+        "unattempted": 5,
+        "marksObtained": 32,
+        "totalMarks": 50
+      },
+      {
+        "subject": "General Awareness",
+        "totalQuestions": 25,
+        "attempted": 14,
+        "correct": 10,
+        "incorrect": 4,
+        "unattempted": 11,
+        "marksObtained": 20,
+        "totalMarks": 50
+      }
+    ],
+    "totalQuestions": 100,
+    "attempted": 74,
+    "correct": 59,
+    "incorrect": 15,
+    "unattempted": 26,
+    "marksObtained": 118,
+    "totalMarks": 200,
+    "timeTakenMinutes": 60,
+    "wrongQuestions": [
+      {
+        "subject": "Quantitative Aptitude",
+        "chapter": "Mixture and Alligation",
+        "reason": "Calculation mistake"
+      },
+      {
+        "subject": "Reasoning",
+        "chapter": "Number Series",
+        "reason": "Logic not identified"
+      }
+    ]
+  }
+]
+}

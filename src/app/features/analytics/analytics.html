@@ -1,0 +1,574 @@
+<div class="analytics-container">
+
+  <!-- HEADER -->
+  <header class="analytics-header">
+
+    <div>
+      <h1>Analytics</h1>
+      <p>
+        Detailed performance analysis for {{ studentName }}
+      </p>
+    </div>
+
+    <div class="header-actions">
+
+      <button class="theme-toggle" type="button" (click)="theme.toggle()">{{ theme.isDark ? '☀' : '☾' }}</button>
+
+      <button
+        mat-stroked-button
+        type="button"
+        (click)="goToDashboard()">
+        Dashboard
+      </button>
+
+      <button
+        mat-flat-button
+        type="button"
+        (click)="goToTestEntry()">
+        + Add Test
+      </button>
+
+      <button
+        mat-stroked-button
+        type="button"
+        (click)="logout()">
+        Logout
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- FILTERS -->
+  <mat-card class="filter-card">
+
+    <div class="filters">
+
+      <!-- PERIOD -->
+      <mat-form-field appearance="outline">
+
+        <mat-label>Performance Period</mat-label>
+
+        <mat-select
+          [(value)]="selectedPeriod"
+          (selectionChange)="applyFilters()">
+
+          <mat-option value="1_WEEK">
+            Last 1 Week
+          </mat-option>
+
+          <mat-option value="2_WEEKS">
+            Last 2 Weeks
+          </mat-option>
+
+          <mat-option value="3_WEEKS">
+            Last 3 Weeks
+          </mat-option>
+
+          <mat-option value="4_WEEKS">
+            Last 4 Weeks
+          </mat-option>
+
+          <mat-option value="3_MONTHS">
+            Last 3 Months
+          </mat-option>
+
+        </mat-select>
+
+      </mat-form-field>
+
+
+      <!-- TIER -->
+      <mat-form-field appearance="outline">
+
+        <mat-label>Tier</mat-label>
+
+        <mat-select
+          [(value)]="selectedTier"
+          (selectionChange)="applyFilters()">
+
+          <mat-option value="ALL">
+            All
+          </mat-option>
+
+          <mat-option value="TIER_1">
+            Tier 1
+          </mat-option>
+
+          <mat-option value="TIER_2">
+            Tier 2
+          </mat-option>
+
+        </mat-select>
+
+      </mat-form-field>
+
+
+      <!-- TEST TYPE -->
+      <mat-form-field appearance="outline">
+
+        <mat-label>Test Type</mat-label>
+
+        <mat-select
+          [(value)]="selectedTestType"
+          (selectionChange)="applyFilters()">
+
+          <mat-option value="ALL">
+            All
+          </mat-option>
+
+          <mat-option value="FULL_TEST">
+            Full Test
+          </mat-option>
+
+          <mat-option value="SECTIONAL">
+            Sectional
+          </mat-option>
+
+        </mat-select>
+
+      </mat-form-field>
+
+
+      <!-- SUBJECT -->
+      <mat-form-field appearance="outline">
+
+        <mat-label>Subject</mat-label>
+
+        <mat-select
+          [(value)]="selectedSubject"
+          (selectionChange)="applyFilters()">
+
+          <mat-option value="ALL">
+            All Subjects
+          </mat-option>
+
+          <mat-option value="Quantitative Aptitude">
+            Quantitative Aptitude
+          </mat-option>
+
+          <mat-option value="Reasoning">
+            Reasoning
+          </mat-option>
+
+          <mat-option value="English">
+            English
+          </mat-option>
+
+          <mat-option value="General Awareness">
+            General Awareness
+          </mat-option>
+
+        </mat-select>
+
+      </mat-form-field>
+
+    </div>
+
+  </mat-card>
+
+
+  <!-- OVERALL -->
+  <section class="summary-grid">
+
+    <mat-card>
+      <span>Total Tests</span>
+      <strong>{{ totalTests }}</strong>
+    </mat-card>
+
+    <mat-card>
+      <span>Total Questions</span>
+      <strong>{{ totalQuestions }}</strong>
+    </mat-card>
+
+    <mat-card>
+      <span>Attempted</span>
+      <strong>{{ totalAttempted }}</strong>
+    </mat-card>
+
+    <mat-card>
+      <span>Accuracy</span>
+      <strong>{{ accuracy }}%</strong>
+    </mat-card>
+
+  </section>
+
+
+  <!-- QUESTION BREAKDOWN -->
+  <mat-card class="section-card">
+
+    <div class="section-header">
+
+      <div>
+        <h2>Question Breakdown</h2>
+        <p>{{ getPeriodName() }}</p>
+      </div>
+
+    </div>
+
+    <div class="question-breakdown">
+
+      <div class="breakdown-item">
+        <span>Correct</span>
+        <strong>{{ totalCorrect }}</strong>
+      </div>
+
+      <div class="breakdown-item">
+        <span>Incorrect</span>
+        <strong>{{ totalIncorrect }}</strong>
+      </div>
+
+      <div class="breakdown-item">
+        <span>Unattempted</span>
+        <strong>{{ totalUnattempted }}</strong>
+      </div>
+
+    </div>
+
+  </mat-card>
+
+
+  <!-- SUBJECT PERFORMANCE -->
+  <mat-card class="section-card">
+
+    <div class="section-header">
+
+      <div>
+        <h2>Subject Performance</h2>
+        <p>Accuracy by subject</p>
+      </div>
+
+    </div>
+
+    @if (subjectPerformance.length === 0) {
+
+      <div class="empty-state">
+        No subject data available.
+      </div>
+
+    } @else {
+
+      <div class="subject-list">
+
+        @for (
+          subject of subjectPerformance;
+          track subject.subject
+        ) {
+
+          <div class="subject-row">
+
+            <div class="subject-name">
+
+              <strong>
+                {{ subject.subject }}
+              </strong>
+
+              <small>
+                {{ subject.correct }}/{{ subject.attempted }}
+                correct
+              </small>
+
+            </div>
+
+            <div class="progress-container">
+
+              <div
+                class="progress-bar"
+                [style.width.%]="subject.accuracy">
+              </div>
+
+            </div>
+
+            <strong class="percentage">
+              {{ subject.accuracy }}%
+            </strong>
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+  </mat-card>
+
+
+  <!-- PERFORMANCE TREND -->
+  <mat-card class="section-card">
+
+    <div class="section-header">
+
+      <div>
+        <h2>Performance Trend</h2>
+        <p>Accuracy for each test</p>
+      </div>
+
+    </div>
+
+    @if (performanceTrend.length === 0) {
+
+      <div class="empty-state">
+        No test data available.
+      </div>
+
+    } @else {
+
+      <div class="trend-list">
+
+        @for (
+          item of performanceTrend;
+          track $index
+        ) {
+
+          <div class="trend-row">
+
+            <span class="trend-date">
+              {{ item.date }}
+            </span>
+
+            <div class="progress-container">
+
+              <div
+                class="progress-bar"
+                [style.width.%]="getTrendBarWidth(item.accuracy)">
+              </div>
+
+            </div>
+
+            <strong>
+              {{ item.accuracy }}%
+            </strong>
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+  </mat-card>
+
+
+  <!-- TWO COLUMN -->
+  <section class="two-column">
+
+
+    <!-- WEAK CHAPTERS -->
+    <mat-card class="section-card">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Weak Chapters</h2>
+          <p>Most frequently wrong chapters</p>
+        </div>
+
+      </div>
+
+      @if (weakChapters.length === 0) {
+
+        <div class="empty-state">
+          No wrong-question data available.
+        </div>
+
+      } @else {
+
+        <div class="chapter-list">
+
+          @for (
+            chapter of weakChapters;
+            track chapter.subject + chapter.chapter
+          ) {
+
+            <div class="chapter-row">
+
+              <div>
+                <strong>
+                  {{ chapter.chapter }}
+                </strong>
+
+                <small>
+                  {{ chapter.subject }}
+                </small>
+              </div>
+
+              <strong>
+                {{ chapter.wrongCount }} wrong
+              </strong>
+
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+    </mat-card>
+
+
+    <!-- MISTAKE REASONS -->
+    <mat-card class="section-card">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Mistake Reasons</h2>
+          <p>Reasons behind wrong answers</p>
+        </div>
+
+      </div>
+
+      @if (mistakeReasons.length === 0) {
+
+        <div class="empty-state">
+          No mistake data available.
+        </div>
+
+      } @else {
+
+        <div class="reason-list">
+
+          @for (
+            reason of mistakeReasons;
+            track reason.reason
+          ) {
+
+            <div class="reason-row">
+
+              <div class="reason-info">
+
+                <span>
+                  {{ reason.reason }}
+                </span>
+
+                <strong>
+                  {{ reason.percentage }}%
+                </strong>
+
+              </div>
+
+              <div class="progress-container">
+
+                <div
+                  class="progress-bar"
+                  [style.width.%]="getReasonBarWidth(reason.percentage)">
+                </div>
+
+              </div>
+
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+    </mat-card>
+
+  </section>
+
+
+  <!-- TEST TYPE + TIER -->
+  <section class="two-column">
+
+
+    <!-- TEST TYPE -->
+    <mat-card class="section-card">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Full Test vs Sectional</h2>
+          <p>Compare your test performance</p>
+        </div>
+
+      </div>
+
+      @for (
+        item of testTypePerformance;
+        track item.type
+      ) {
+
+        <div class="comparison-row">
+
+          <div>
+            <strong>{{ item.type }}</strong>
+            <small>{{ item.tests }} tests</small>
+          </div>
+
+          <strong>
+            {{ item.accuracy }}%
+          </strong>
+
+        </div>
+
+      }
+
+    </mat-card>
+
+
+    <!-- TIER -->
+    <mat-card class="section-card">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Tier Performance</h2>
+          <p>Compare Tier 1 and Tier 2</p>
+        </div>
+
+      </div>
+
+      @for (
+        item of tierPerformance;
+        track item.tier
+      ) {
+
+        <div class="comparison-row">
+
+          <div>
+            <strong>{{ item.tier }}</strong>
+            <small>{{ item.tests }} tests</small>
+          </div>
+
+          <strong>
+            {{ item.accuracy }}%
+          </strong>
+
+        </div>
+
+      }
+
+    </mat-card>
+
+  </section>
+
+
+  <!-- EMPTY OVERALL -->
+  @if (filteredTests.length === 0) {
+
+    <mat-card class="empty-card">
+
+      <h2>No data available</h2>
+
+      <p>
+        Try changing the filters or add a new test.
+      </p>
+
+      <button
+        mat-flat-button
+        type="button"
+        (click)="goToTestEntry()">
+        Add Test
+      </button>
+
+    </mat-card>
+
+  }
+
+</div>
