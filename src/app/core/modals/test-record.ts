@@ -16,6 +16,7 @@ export interface WrongQuestion {
   subject: string;
   chapter: string;
   reason: string;
+  notes?: string;
 }
 
 export interface TestRecord {

@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MockData, TestRecord } from '../../core/services/mock-data';
 
 import { ThemeService } from '../../core/services/theme.service';
+import { ApiCallService } from '../../core/api-call/api-call';
 
 
 interface SubjectMark {
@@ -52,6 +53,7 @@ interface WrongQuestion {
 
 
 export class TestEntry implements OnInit {
+
 
   studentName = 'Student';
 
@@ -191,6 +193,7 @@ export class TestEntry implements OnInit {
 
   constructor(
     private data: MockData,
+    private apiCallService: ApiCallService,
     private router: Router,
     public theme: ThemeService
   ) {}
@@ -535,9 +538,7 @@ export class TestEntry implements OnInit {
       ) || 1;
 
 
-    // -------------------------
-    // SUBJECT RESULT
-    // -------------------------
+    
 
     const subjectResults = this.subjectMarks.map(
       item => ({
@@ -647,9 +648,21 @@ export class TestEntry implements OnInit {
     };
 
 
-    // Save in MockData
+    
 
-    this.data.addTest(record);
+    // console.log("3333333", record)
+
+    this.apiCallService.createTest(record).subscribe({
+      next: (response) => {
+        console.log('Test created:', response);
+        this.router.navigate(['/dashboard']);
+      },
+
+      error: (error) => {
+        console.error('Create test failed:', error);
+        this.error = 'Failed to save test';
+      }
+    });
 
 
     // Go dashboard

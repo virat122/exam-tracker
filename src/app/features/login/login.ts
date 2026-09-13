@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ThemeService } from '../../core/services/theme.service';
+import { ApiCallService } from '../../core/api-call/api-call';
 
 @Component({
   selector: 'app-login',
@@ -31,42 +32,46 @@ export class Login {
   ];
 
   selectedStudent: number | null = null;
+  username=""
   pin = '';
 
   errorMessage = '';
 
-  constructor(private router: Router, public theme: ThemeService) {}
+  constructor(private router: Router, public theme: ThemeService ,public apiCallService :ApiCallService) {}
 
   login(): void {
+  this.errorMessage = '';
 
-    this.errorMessage = '';
-
-    const student = this.students.find(
-      student => student.id === this.selectedStudent
-    );
-
-    if (!student) {
-      this.errorMessage = 'Please select a student';
-      return;
-    }
-
-    if (student.pin !== this.pin) {
-      this.errorMessage = 'Invalid PIN';
-      return;
-    }
-
-    // Store logged-in student temporarily
-    sessionStorage.setItem(
-      'loggedInStudentId',
-      student.id.toString()
-    );
-
-    sessionStorage.setItem(
-      'loggedInStudentName',
-      student.name
-    );
-
-    // Navigate to dashboard
-    this.router.navigate(['/dashboard']);
+  if (!this.username.trim() || this.pin.length !== 4) {
+    this.errorMessage = 'Username and PIN are required';
+    return;
   }
+
+  const payload = {
+    username: this.username.trim(),
+    password: this.pin
+  };
+
+  this.apiCallService.login(payload).subscribe({
+    next: (response) => {
+
+      sessionStorage.setItem(
+        'loggedInStudentId',
+        response.student.id.toString()
+      );
+
+      sessionStorage.setItem(
+        'loggedInStudentName',
+        response.student.name
+      );
+
+      this.router.navigate(['/dashboard']);
+    },
+
+    error: (error) => {
+      this.errorMessage =
+        error.error?.message || 'Invalid username or PIN';
+    }
+  });
+}
 }

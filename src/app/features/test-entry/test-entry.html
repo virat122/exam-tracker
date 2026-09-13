@@ -14,17 +14,11 @@
 
     <div class="actions">
 
-      <button
-        class="theme-toggle"
-        type="button"
-        (click)="theme.toggle()">
+      <button class="theme-toggle" type="button" (click)="theme.toggle()">
         {{ theme.isDark ? '☀' : '☾' }}
       </button>
 
-      <button
-        mat-stroked-button
-        type="button"
-        (click)="back()">
+      <button mat-stroked-button type="button" (click)="back()">
         ← Dashboard
       </button>
 
@@ -63,10 +57,7 @@
 
           <mat-label>Date</mat-label>
 
-          <input
-            matInput
-            type="date"
-            [(ngModel)]="testDate">
+          <input matInput type="date" [(ngModel)]="testDate">
 
         </mat-form-field>
 
@@ -98,9 +89,7 @@
 
           <mat-label>Test type</mat-label>
 
-          <mat-select
-            [(ngModel)]="testType"
-            (selectionChange)="onTestTypeChange()">
+          <mat-select [(ngModel)]="testType" (selectionChange)="onTestTypeChange()">
 
             <mat-option value="FULL_TEST">
               Full test
@@ -119,25 +108,23 @@
 
         @if (testType === 'SECTIONAL') {
 
-          <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline">
 
-            <mat-label>Subject</mat-label>
+          <mat-label>Subject</mat-label>
 
-            <mat-select
-              [(ngModel)]="subject"
-              (selectionChange)="onSubjectChange()">
+          <mat-select [(ngModel)]="subject" (selectionChange)="onSubjectChange()">
 
-              @for (item of subjects; track item) {
+            @for (item of subjects; track item) {
 
-                <mat-option [value]="item">
-                  {{ item }}
-                </mat-option>
+            <mat-option [value]="item">
+              {{ item }}
+            </mat-option>
 
-              }
+            }
 
-            </mat-select>
+          </mat-select>
 
-          </mat-form-field>
+        </mat-form-field>
 
         }
 
@@ -173,11 +160,7 @@
 
           <mat-label>Total questions</mat-label>
 
-          <input
-            matInput
-            type="number"
-            min="1"
-            [(ngModel)]="totalQuestions">
+          <input matInput type="number" min="1" [(ngModel)]="totalQuestions">
 
         </mat-form-field>
 
@@ -188,11 +171,7 @@
 
           <mat-label>Attempted</mat-label>
 
-          <input
-            matInput
-            type="number"
-            min="0"
-            [(ngModel)]="attempted">
+          <input matInput type="number" min="0" [(ngModel)]="attempted">
 
         </mat-form-field>
 
@@ -203,11 +182,7 @@
 
           <mat-label>Correct</mat-label>
 
-          <input
-            matInput
-            type="number"
-            min="0"
-            [(ngModel)]="correct">
+          <input matInput type="number" min="0" [(ngModel)]="correct">
 
         </mat-form-field>
 
@@ -218,11 +193,7 @@
 
           <mat-label>Time taken (minutes)</mat-label>
 
-          <input
-            matInput
-            type="number"
-            min="1"
-            [(ngModel)]="timeTakenMinutes">
+          <input matInput type="number" min="1" [(ngModel)]="timeTakenMinutes">
 
         </mat-form-field>
 
@@ -254,48 +225,39 @@
 
         @for (item of subjectMarks; track item.subject) {
 
-          <div class="subject-mark-card">
+        <div class="subject-mark-card">
 
-            <div class="subject-mark-title">
+          <div class="subject-mark-title">
 
-              <strong>
-                {{ item.subject }}
-              </strong>
-
-            </div>
-
-
-            <!-- MARKS OBTAINED -->
-
-            <mat-form-field appearance="outline">
-
-              <mat-label>Marks obtained</mat-label>
-
-              <input
-                matInput
-                type="number"
-                min="0"
-                [max]="item.totalMarks"
-                [(ngModel)]="item.marksObtained">
-
-            </mat-form-field>
-
-
-            <!-- TOTAL MARKS -->
-
-            <mat-form-field appearance="outline">
-
-              <mat-label>Total marks</mat-label>
-
-              <input
-                matInput
-                type="number"
-                min="1"
-                [(ngModel)]="item.totalMarks">
-
-            </mat-form-field>
+            <strong>
+              {{ item.subject }}
+            </strong>
 
           </div>
+
+
+          <!-- MARKS OBTAINED -->
+
+          <mat-form-field appearance="outline">
+
+            <mat-label>Marks obtained</mat-label>
+
+            <input matInput type="number" min="0" [max]="item.totalMarks" [(ngModel)]="item.marksObtained">
+
+          </mat-form-field>
+
+
+          <!-- TOTAL MARKS -->
+
+          <mat-form-field appearance="outline">
+
+            <mat-label>Total marks</mat-label>
+
+            <input matInput type="number" min="1" [(ngModel)]="item.totalMarks">
+
+          </mat-form-field>
+
+        </div>
 
         }
 
@@ -334,14 +296,13 @@
 
           <mat-label>Subject</mat-label>
 
-          <mat-select
-            [(ngModel)]="wrongSubject">
+          <mat-select [(ngModel)]="wrongSubject">
 
             @for (item of subjects; track item) {
 
-              <mat-option [value]="item">
-                {{ item }}
-              </mat-option>
+            <mat-option [value]="item">
+              {{ item }}
+            </mat-option>
 
             }
 
@@ -356,17 +317,16 @@
 
           <mat-label>Chapter</mat-label>
 
-          <mat-select
-            [(ngModel)]="wrongChapter">
+          <mat-select [(ngModel)]="wrongChapter">
 
             @for (
-              chapter of getChaptersForSubject();
-              track chapter
+            chapter of getChaptersForSubject();
+            track chapter
             ) {
 
-              <mat-option [value]="chapter">
-                {{ chapter }}
-              </mat-option>
+            <mat-option [value]="chapter">
+              {{ chapter }}
+            </mat-option>
 
             }
 
@@ -381,14 +341,13 @@
 
           <mat-label>Mistake type</mat-label>
 
-          <mat-select
-            [(ngModel)]="wrongReason">
+          <mat-select [(ngModel)]="wrongReason">
 
             @for (reason of reasons; track reason) {
 
-              <mat-option [value]="reason">
-                {{ reason }}
-              </mat-option>
+            <mat-option [value]="reason">
+              {{ reason }}
+            </mat-option>
 
             }
 
@@ -399,27 +358,18 @@
 
         <!-- NOTES -->
 
-        <mat-form-field
-          appearance="outline"
-          class="notes-field">
+        <mat-form-field appearance="outline" class="notes-field">
 
           <mat-label>Notes (optional)</mat-label>
 
-          <input
-            matInput
-            [(ngModel)]="wrongNotes"
-            placeholder="e.g. Forgot formula">
+          <input matInput [(ngModel)]="wrongNotes" placeholder="e.g. Forgot formula">
 
         </mat-form-field>
 
 
         <!-- ADD BUTTON -->
 
-        <button
-          mat-stroked-button
-          type="button"
-          class="add-question-button"
-          (click)="addWrongQuestion()">
+        <button mat-stroked-button type="button" class="add-question-button" (click)="addWrongQuestion()">
 
           + Add Wrong Question
 
@@ -434,68 +384,64 @@
 
       @if (wrongQuestions.length > 0) {
 
-        <div class="wrong-question-list">
+      <div class="wrong-question-list">
 
-          <h3>
-            Added wrong questions ({{ wrongQuestions.length }})
-          </h3>
-
-
-          @for (
-            question of wrongQuestions;
-            track $index;
-            let i = $index
-          ) {
-
-            <div class="wrong-question-item">
-
-              <div class="wrong-question-info">
-
-                <strong>
-                  {{ question.subject }} — {{ question.chapter }}
-                </strong>
-
-                <span>
-                  {{ question.reason }}
-                </span>
-
-                @if (question.notes) {
-
-                  <small>
-                    {{ question.notes }}
-                  </small>
-
-                }
-
-              </div>
+        <h3>
+          Added wrong questions ({{ wrongQuestions.length }})
+        </h3>
 
 
-              <button
-                mat-button
-                color="warn"
-                type="button"
-                (click)="removeWrongQuestion(i)">
+        @for (
+        question of wrongQuestions;
+        track $index;
+        let i = $index
+        ) {
 
-                Remove
+        <div class="wrong-question-item">
 
-              </button>
+          <div class="wrong-question-info">
 
-            </div>
+            <strong>
+              {{ question.subject }} — {{ question.chapter }}
+            </strong>
 
-          }
+            <span>
+              {{ question.reason }}
+            </span>
+
+            @if (question.notes) {
+
+            <small>
+              {{ question.notes }}
+            </small>
+
+            }
+
+          </div>
+
+
+          <button mat-button color="warn" type="button" (click)="removeWrongQuestion(i)">
+
+            Remove
+
+          </button>
 
         </div>
+
+        }
+
+      </div>
 
       }
 
 
       @if (wrongQuestions.length === 0) {
 
-        <div class="empty-info">
+      <div class="empty-info">
 
-          No wrong questions added yet.
+        No wrong questions added yet.
 
-        </div>
+      </div>
 
       }
 
@@ -504,20 +450,16 @@
 
       @if (error) {
 
-        <p class="form-error">
-          {{ error }}
-        </p>
+      <p class="form-error">
+        {{ error }}
+      </p>
 
       }
 
 
       <!-- SAVE -->
 
-      <button
-        mat-flat-button
-        class="save-button"
-        type="button"
-        (click)="save()">
+      <button mat-flat-button class="save-button" type="button" (click)="save()">
 
         Save test result →
 
@@ -542,9 +484,7 @@
       </h2>
 
 
-      <div
-        class="ring"
-        [style.--progress]="accuracy + '%'">
+      <div class="ring" [style.--progress]="accuracy + '%'">
 
         <span>
 

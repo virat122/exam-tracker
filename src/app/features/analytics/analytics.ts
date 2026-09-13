@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MockData } from '../../core/services/mock-data';
 import { TestRecord } from '../../core/modals/test-record';
 import { ThemeService } from '../../core/services/theme.service';
+import { ApiCallService } from '../../core/api-call/api-call';
 
 @Component({
   selector: 'app-analytics',
@@ -89,7 +90,8 @@ export class Analytics implements OnInit {
   constructor(
     private mockData: MockData,
     private router: Router,
-    public theme: ThemeService
+    public theme: ThemeService,
+    public apiCallService : ApiCallService
   ) {}
 
   ngOnInit(): void {
@@ -101,8 +103,17 @@ export class Analytics implements OnInit {
     this.studentName =
       sessionStorage.getItem('loggedInStudentName') || 'Student';
 
-    this.allTests =
-      this.mockData.getTestsByStudent(this.studentId);
+
+      this.apiCallService.fetchTest(this.studentId).subscribe({
+      next: (response) => {
+        this.allTests =response;
+       
+      },
+
+      error: (error) => {
+        console.error('failed to fetch test:', error);
+      }
+    });
 
     this.applyFilters();
   }

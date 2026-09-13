@@ -37,3 +37,33 @@ button, input { font: inherit; }
 .mat-mdc-card { background: var(--surface) !important; color: var(--text) !important; border: 1px solid var(--border); box-shadow: var(--shadow) !important; }
 .mat-mdc-form-field { --mdc-outlined-text-field-outline-color: var(--border); --mdc-outlined-text-field-label-text-color: var(--muted); --mdc-outlined-text-field-input-text-color: var(--text); }
 .mat-mdc-select-value, .mat-mdc-select-arrow { color: var(--text) !important; }
+/* Dark mode */
+html[data-theme="dark"] {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Angular Material input text */
+html[data-theme="dark"] .mat-mdc-input-element {
+  color: #ffffff !important;
+}
+
+/* Angular Material input label */
+html[data-theme="dark"] .mdc-floating-label {
+  color: #cccccc !important;
+}
+
+/* Input placeholder */
+html[data-theme="dark"] .mat-mdc-input-element::placeholder {
+  color: #aaaaaa !important;
+}
+
+/* Material select value */
+html[data-theme="dark"] .mat-mdc-select-value {
+  color: #ffffff !important;
+}
+
+/* Material select placeholder */
+html[data-theme="dark"] .mat-mdc-select-placeholder {
+  color: #cccccc !important;
+}
