@@ -8,7 +8,7 @@ import { LoadingService } from './../services/loading-service';
 })
 export class ApiCallService {
 
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://exam-tracker-backend.onrender.com/api';
 
   constructor(
     private http: HttpClient,
